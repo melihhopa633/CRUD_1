@@ -1,0 +1,34 @@
+﻿@*_DeleteEmployeeModelPartial*@
+@model Employee
+
+<div class="modal fade" id="addEmployee" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addEmployeeLabel">Are You Sure</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="Delete">
+                    <div class="form-group">
+                        <input type="hidden" asp-for="@Model.Id"/>
+                        <label asp-for="Id">@Model.Id</label>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <label asp-for="Name">@Model.Name</label>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <label asp-for="Email">@Model.Email</label>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-save="modal">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
